@@ -11,10 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-gray-200 min-h-screen">
-        <Header />
-        <Sidebar />
-      </main>
+      <main className="bg-gray-200 min-h-screen"></main>
     </>
   );
 }

@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { RxSketchLogo, RxDashboard } from "react-icons/rx";
+import {
+  RxSketchLogo,
+  RxDashboard,
+  RxPerson,
+  RxGear,
+  RxTable,
+} from "react-icons/rx";
+import { SidebarIcon } from "./utils/SidebarIcon";
 
 type SidebarProps = {
   children: React.ReactNode;
@@ -17,9 +24,18 @@ export const Sidebar = (props: SidebarProps) => {
             </div>
           </Link>
           <span className="border-b-[1px] w-full border-gray-200 p-2"></span>
-          <div className=" bg-gray-100 hover:bg-gray-200 cursor-crosshair my-4 rounded-lg p-3 inline-block ">
+          <SidebarIcon link="/dashboard">
             <RxDashboard size={24} />
-          </div>
+          </SidebarIcon>
+          <SidebarIcon link="/customers">
+            <RxPerson size={24} />
+          </SidebarIcon>
+          <SidebarIcon link="/tables">
+            <RxTable size={24} />
+          </SidebarIcon>
+          <SidebarIcon link="/settings">
+            <RxGear size={24} />
+          </SidebarIcon>
         </div>
       </div>
       <main className="ml-20 w-full">{props.children}</main>

@@ -24,13 +24,13 @@ export const Sidebar = (props: SidebarProps) => {
             </div>
           </Link>
           <span className="border-b-[1px] w-full border-gray-200 p-2"></span>
-          <SidebarIcon link="/dashboard">
+          <SidebarIcon link="/">
             <RxDashboard size={24} />
           </SidebarIcon>
           <SidebarIcon link="/customers">
             <RxPerson size={24} />
           </SidebarIcon>
-          <SidebarIcon link="/tables">
+          <SidebarIcon link="/orders">
             <RxTable size={24} />
           </SidebarIcon>
           <SidebarIcon link="/settings">

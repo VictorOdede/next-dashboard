@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { RxClipboard } from "react-icons/rx";
+import { useEffect, useState } from "react";
 
 interface OrderData {
   id: number;
@@ -14,33 +15,38 @@ interface OrderData {
 }
 
 export const RecentOrders = () => {
-  const data: OrderData[] = [];
+  const [data, setData] = useState<OrderData[] | undefined>();
 
-  for (let i = 1; i <= 10; i++) {
-    let item = {
-      id: i,
-      name: {
-        first: faker.name.firstName(),
-        last: faker.name.lastName(),
-      },
-      total: faker.finance.amount(50, 300, 2, "$"),
-      status: faker.helpers.arrayElement([
-        "On hold",
-        "Processing",
-        "Completed",
-      ]),
-      method: faker.finance.creditCardIssuer(),
-      date: `${faker.datatype.number({ min: 2, max: 59 })}minutes ago`,
-    };
-    data.push(item);
-  }
+  useEffect(() => {
+    let myData = [];
+    for (let i = 1; i <= 10; i++) {
+      let item = {
+        id: i,
+        name: {
+          first: faker.name.firstName(),
+          last: faker.name.lastName(),
+        },
+        total: faker.finance.amount(50, 300, 2, "$"),
+        status: faker.helpers.arrayElement([
+          "On hold",
+          "Processing",
+          "Completed",
+        ]),
+        method: faker.finance.creditCardIssuer(),
+        date: `${faker.datatype.number({ min: 2, max: 59 })}minutes ago`,
+      };
+      myData.push(item);
+    }
+
+    setData(myData);
+  }, []);
 
   return (
     <div className="w-full col-span-1 relative lg:h-[70vh] h-[50-vh] m-auto p-4 border rounded-lg bg-white overflow-scroll shadow-md">
       <h1>Recent Orders</h1>
       <ul>
         <li>
-          {data.map((order, id) => (
+          {data?.map((order, id) => (
             <li
               key={id}
               className="bg-gray-50 hover:bg-gray-100 rounded-lg  my-3 p-2 flex items-center cursor-pointer"

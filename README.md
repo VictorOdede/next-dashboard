@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Overview
+
+This app uses Next JS and ChartJS library to retrieve data from a web server and present it to the user. The application adheres to the following principles:
+
+- Retrieves the most recent data during each render to ensure that the user has access to the most up-to-date information.
+- Fetches only the necessary data for display, minimizing network traffic and improving application performance.
+- Executes resource-intensive tasks on the server side to reduce the load on the client device and improve overall performance.
 
 ## Getting Started
 
@@ -31,8 +37,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Languages/Frameworks
+- TypeScript
+- Next JS
+- TailwindCSS

@@ -26,7 +26,7 @@ const data = {
   datasets: [
     {
       label: "Number of Sales",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+      data: labels.map(() => faker.datatype.number({ min: 20, max: 200 })),
       borderWidth: 4,
       borderRadius: 8,
       borderColor: "#3B82F6",
@@ -76,6 +76,9 @@ export const BarChart = () => {
   return (
     <>
       <div className=" md:col-span-2 relative lg:h-[70vh] h-[50vh] m-auto bg-white w-full border p-4 rounded-lg shadow-md ">
+        <div className=" flex p-4">
+          <h1 className=" text-gray-500 font-semibold ">Daily customers</h1>
+        </div>
         <Bar data={data} options={options} />
       </div>
     </>

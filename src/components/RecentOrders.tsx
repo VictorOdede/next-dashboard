@@ -43,7 +43,7 @@ export const RecentOrders = () => {
 
   return (
     <div className="w-full col-span-1 relative lg:h-[70vh] h-[50-vh] m-auto p-4 border rounded-lg bg-white overflow-scroll shadow-md">
-      <h1>Recent Orders</h1>
+      <h1 className="text-gray-500 font-semibold">Recent Orders</h1>
       <ul>
         {data?.map((order, id) => (
           <li

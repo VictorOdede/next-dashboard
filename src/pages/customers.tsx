@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { RxPerson } from "react-icons/rx";
+import { RxPerson, RxDotsVertical } from "react-icons/rx";
 import { useEffect, useState } from "react";
 
 interface OrderData {
@@ -43,18 +43,17 @@ export const Customers = () => {
       </div>
       <div className="p-4">
         <div className=" w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto shadow-md ">
-          <div className=" my-3 p-2 grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer ">
+          <div className=" my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer ">
             <span>Name</span>
             <span className=" sm:text-left text-right">Email</span>
-            <span className=" sm:grid hidden">Payment</span>
+            <span className=" sm:grid hidden">Last order</span>
             <span className="md:grid hidden">Method</span>
-            <span className="md:grid hidden">Status</span>
           </div>
           <ul>
             {data?.map((order, id) => (
               <li
                 key={id}
-                className="bg-gray-50 hover:bg-gray-100 rounded-lg  my-3 p-2 grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 justify-between items-center cursor-pointer"
+                className="bg-gray-50 hover:bg-gray-100 rounded-lg  my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 justify-between items-center cursor-pointer"
               >
                 <div className=" flex items-center">
                   <div className="bg-blue-200 rounded-lg p-3">
@@ -64,19 +63,12 @@ export const Customers = () => {
                 </div>
                 <p className="text-gray-600 sm:text-left text-right ">{`${order.name.first}@gmail.com`}</p>
                 <p className="text-gray-600 sm:grid hidden">{order.total}</p>
-                <p className="text-gray-600 md:grid hidden">
-                  {order.method.toUpperCase()}
-                </p>
-
-                {order.status == "Completed" ? (
-                  <div className="bg-green-200 rounded-lg p-1 items-center md:grid hidden">
-                    <p className=" text-center text-gray-600">{order.status}</p>
-                  </div>
-                ) : (
-                  <div className="bg-gray-200 rounded-lg p-1 items-center md:grid hidden">
-                    <p className=" text-center text-gray-600">{order.status}</p>
-                  </div>
-                )}
+                <div className=" sm:flex items-center justify-between">
+                  <p className="text-gray-600 md:grid hidden">
+                    {order.method.toUpperCase()}
+                  </p>
+                  <RxDotsVertical />
+                </div>
               </li>
             ))}
           </ul>
